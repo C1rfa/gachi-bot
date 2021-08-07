@@ -164,9 +164,7 @@ async def get_music_classification(user_name:str, audio):
 async def get_text_classification(text:str, user_name:str, user_id:int):
     if len(text) > 1500:
         return await generate_refusal(user_name)
-    
-    answer = ''
-        
+            
     answer = await generate_outocome(user_name, await classify_sexism(text))
     return answer   
 
